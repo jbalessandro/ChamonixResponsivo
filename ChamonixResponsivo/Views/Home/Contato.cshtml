@@ -1,0 +1,79 @@
+﻿@model ChamonixResponsivo.Models.ContatoViewModels
+
+@{
+    ViewBag.Title = "Chamonix - O melhor fondue da serra";
+}
+
+<div class="container body-page">
+    <div class="row">
+        <div class="col-md-3 col-md-offset-1 barra-vertical texto-barra">
+            <div class="container">
+                <div class="row col-md-12 titulo-barra">
+                    VENHA NOS VISITAR
+                </div>
+                <div class="row texto-barra"><hr /></div>
+                <div class="row row-space">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 col-lg-offset-1 barra-content">
+            <div class="row">
+                <div class="col-md-12 titulo-content text-center">
+                    ESTAMOS ANSIOSOS PELO SEU CONTATO
+                </div>
+            </div>
+            <div class="row top10">
+                <div class="col-md-12">
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Mensagem, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Mensagem, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Mensagem, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    @if (ViewBag.Obrigado != null)
+                                    {
+                                        <span class="titulo-content">                                    
+                                            @ViewBag.Obrigado
+                                        </span>                                        
+                                    }
+                                    else
+                                    {
+                                        <input type="submit" value="Enviar mensagem" class="btn btn-sm" />
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

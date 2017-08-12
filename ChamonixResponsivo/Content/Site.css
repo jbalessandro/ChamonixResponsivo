@@ -1,6 +1,6 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -16,9 +16,133 @@
     white-space: normal;
 }
 
+.body-page {
+    padding-top: 100px;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
+}
+
+/* site */
+.background-image {
+    background: url(/images/fondue.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 0px;
+}
+
+.logo {
+    background-color: #1E1E1E; /*#7D2A24;*/
+    text-align: center;
+}
+
+.barra-content {
+    color: #EAEAEA;
+    font: normal normal normal 13px/1.4em 'Open Sans',sans-serif;
+    min-height: 900px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.barra-vertical {
+    background-color: #1E1E1E; /*#7D2A24;*/
+    color: #EAEAEA;
+    font: normal normal normal 13px/1.4em 'Open Sans',sans-serif;
+    min-height: 900px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.barra-horizontal {
+    color: #656565;
+    padding: 10px 12% 10px 12%;
+}
+
+.titulo-content {
+    font: normal normal normal 18px/1.4em 'Open Sans',sans-serif;
+    color: #EAEAEA;
+    padding: 20px 0 20px 0;
+}
+
+.titulo-barra {
+    font: normal normal normal 18px/1.4em 'Open Sans',sans-serif;
+    color: #EAEAEA;
+    text-align: center;
+    padding: 0 0 0 10px;
+}
+
+.barrinha {
+    color: #656565;
+    padding: 10px 35% 10px 35%;
+    text-align: center;
+}
+
+.texto-barra, reserva {
+    padding: 20px 20px 0 20px;
+    color: #EAEAEA;
+    text-align: center;
+}
+
+.reserva {
+    border: 1px solid #EAEAEA;
+    padding: 40px 20px 30px 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.menu {
+    padding: 2px 0 40px 0;
+    color: #EAEAEA;
+    font: normal normal normal 13px/1.4em 'Open Sans',sans-serif;
+    min-width: 120px;
+    text-align: center;
+}
+
+.row-menu {
+    margin-top: 0px;
+    height: 60px;
+    /*background-color: rgba(0,0,0,0.5);*/
+}
+
+.row-space {
+    padding-top: 20px;
+}
+
+.top10 {
+    padding-top: 10px;
+}
+
+.top20 {
+    padding-top: 20px;
+}
+
+.top50 {
+    padding-top: 50px;
+}
+
+.pad20 {
+    padding: 20px;
+}
+
+.scroll-div {
+    margin-top: 0px !important;
+    position: absolute;
+}
+
+.box-content {
+    padding: 20px;
+}
+
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
 }
