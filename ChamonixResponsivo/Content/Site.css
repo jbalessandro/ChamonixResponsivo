@@ -84,14 +84,9 @@ textarea {
     padding: 0 0 0 10px;
 }
 .item-cardapio{
-    font: normal normal normal 16px/1.4em 'Open Sans',sans-serif;
-    color: #EAEAEA;
-    padding: 10px 0 0 20px;
-}
-.ingredientes{
     font: normal normal normal 12px/1.4em 'Open Sans',sans-serif;
     color: #EAEAEA;
-    padding: 3px 0 0 20px;
+    padding: 8px 0 0 20px;
 }
 .barrinha {
     color: #656565;
