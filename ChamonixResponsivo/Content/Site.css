@@ -78,7 +78,21 @@ textarea {
     text-align: center;
     padding: 0 0 0 10px;
 }
-
+.titulo-cardapio{
+    font: normal normal normal 18px/1.4em 'Open Sans',sans-serif;
+    color: #EAEAEA;
+    padding: 0 0 0 10px;
+}
+.item-cardapio{
+    font: normal normal normal 16px/1.4em 'Open Sans',sans-serif;
+    color: #EAEAEA;
+    padding: 10px 0 0 20px;
+}
+.ingredientes{
+    font: normal normal normal 12px/1.4em 'Open Sans',sans-serif;
+    color: #EAEAEA;
+    padding: 3px 0 0 20px;
+}
 .barrinha {
     color: #656565;
     padding: 10px 35% 10px 35%;

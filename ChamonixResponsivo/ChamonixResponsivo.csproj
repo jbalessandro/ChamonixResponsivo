@@ -224,6 +224,9 @@
     <Content Include="images\img-rest-05.jpg" />
     <Content Include="images\img-rest-06.jpg" />
     <Content Include="images\logo.png" />
+    <Content Include="images\sld-01.jpg" />
+    <Content Include="images\sld-02.jpg" />
+    <Content Include="images\sld-03.jpg" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -275,6 +278,7 @@
     <Content Include="Views\Home\Restaurante.cshtml" />
     <Content Include="Views\Home\Contato.cshtml" />
     <Content Include="Views\Home\Localizacao.cshtml" />
+    <Content Include="Views\Home\Cardapio.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
