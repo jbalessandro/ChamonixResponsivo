@@ -17,7 +17,7 @@
 }
 
 .body-page {
-    padding-top: 100px;
+    padding-top: 160px;
 }
 
 .position-fixed {
@@ -78,16 +78,19 @@ textarea {
     text-align: center;
     padding: 0 0 0 10px;
 }
-.titulo-cardapio{
+
+.titulo-cardapio {
     font: normal normal normal 18px/1.4em 'Open Sans',sans-serif;
     color: #EAEAEA;
     padding: 0 0 0 10px;
 }
-.item-cardapio{
+
+.item-cardapio {
     font: normal normal normal 12px/1.4em 'Open Sans',sans-serif;
     color: #EAEAEA;
     padding: 8px 0 0 20px;
 }
+
 .barrinha {
     color: #656565;
     padding: 10px 35% 10px 35%;
@@ -131,6 +134,13 @@ textarea {
 
 .top20 {
     padding-top: 20px;
+}
+
+@media only screen and (max-width: 766px) {
+.collapsing, .in {background-color: rgba(34,34,34,1.0);}
+/*.collapsing ul li a, .in ul li a {color: #555!important;}*/
+.collapsing ul li a:hover, .in ul li a:hover {color: #f1f1f1!important;}
+.barra-vertical { min-height:100%;}
 }
 
 .top50 {
