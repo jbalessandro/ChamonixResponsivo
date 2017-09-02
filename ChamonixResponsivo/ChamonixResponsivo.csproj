@@ -215,6 +215,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\carta-vinho-01.jpg" />
+    <Content Include="images\carta-vinho-02.jpg" />
+    <Content Include="images\carta-vinho-03.jpg" />
     <Content Include="images\chamonix-house.jpg" />
     <Content Include="images\fondue.jpg" />
     <Content Include="images\hist-fondue.jpg" />
