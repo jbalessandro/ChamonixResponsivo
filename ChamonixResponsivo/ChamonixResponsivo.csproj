@@ -217,6 +217,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="images\chamonix-house.jpg" />
     <Content Include="images\fondue.jpg" />
+    <Content Include="images\hist-fondue.jpg" />
+    <Content Include="images\hist-raclette.jpg" />
     <Content Include="images\img-rest-01.jpg" />
     <Content Include="images\img-rest-02.jpg" />
     <Content Include="images\img-rest-03.jpg" />
@@ -279,6 +281,8 @@
     <Content Include="Views\Home\Contato.cshtml" />
     <Content Include="Views\Home\Localizacao.cshtml" />
     <Content Include="Views\Home\Cardapio.cshtml" />
+    <Content Include="Views\Home\Historia.cshtml" />
+    <Content Include="Views\Home\CartaVinhosBebidas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -34,6 +34,16 @@ namespace ChamonixResponsivo.Controllers
             return View();
         }
 
+        public ActionResult Historia()
+        {
+            return View();
+        }
+
+        public ActionResult CartaVinhosBebidas()
+        {
+            return View();
+        }
+
         public ActionResult Contato()
         {
             return View(new ContatoViewModels());
