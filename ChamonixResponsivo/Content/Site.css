@@ -66,6 +66,10 @@ textarea {
     padding: 10px 12% 10px 12%;
 }
 
+.horario {
+    font: normal normal normal 11px/1.4em 'Open Sans',sans-serif;
+}
+
 .titulo-content {
     font: normal normal normal 18px/1.4em 'Open Sans',sans-serif;
     color: #EAEAEA;
@@ -145,6 +149,10 @@ textarea {
 
 .top50 {
     padding-top: 50px;
+}
+
+.pad10 {
+    padding: 10px;
 }
 
 .pad20 {

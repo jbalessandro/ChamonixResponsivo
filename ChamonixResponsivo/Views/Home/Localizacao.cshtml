@@ -16,7 +16,7 @@
                 </div>
                 <div class="row texto-barra"><hr /></div>
                 <div cla="row">
-                    BR 444, Km 18
+                    RS 444, Km 18.4
                     <br />Vale dos Vinhedos
                     <br />Bento Gonçalves - RS
                     <br />Tel: 54-96450-0905
@@ -47,7 +47,7 @@
     function initMap() {
         var uluru = { lat: -29.196360, lng: -51.555092 };
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
+            zoom: 17,
             center: uluru
         });
         var marker = new google.maps.Marker({
@@ -55,7 +55,7 @@
             map: map
         });
         infowindow = new google.maps.InfoWindow({
-            content: '<center><strong><span style="color:red">Chamonix Fondue</span></strong><br><span style="color:black">BR 444, Km 18<br>Vale dos Vinhedos<br>Bento Gonçalves - RS</span></center>'
+            content: '<center><strong><span style="color:red">Chamonix Fondue</span></strong><br><span style="color:black">RS 444, Km 18.4<br>Vale dos Vinhedos<br>Bento Gonçalves - RS</span></center>'
         });
         google.maps.event.addListener(marker, 'click', function () {
             infowindow.open(map, marker);

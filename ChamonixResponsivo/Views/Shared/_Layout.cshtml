@@ -24,17 +24,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav menu">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Restaurante", "Restaurante", "Home")</li>
-                    <li>@Html.ActionLink("Cardápio", "Cardapio", "Home")</li>
-                    <li>@Html.ActionLink("Localização","Localizacao", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contato","Home")</li>
+                    <li>@Html.ActionLink("INÍCIO", "Index", "Home")</li>
+                    <li>@Html.ActionLink("RESTAURANTE", "Restaurante", "Home")</li>
+                    <li>@Html.ActionLink("CARDÁPIO", "Cardapio", "Home")</li>
+                    <li>@Html.ActionLink("LOCALIZAÇÃO","Localizacao", "Home")</li>
+                    <li>@Html.ActionLink("CONTATO", "Contato","Home")</li>
+                    <li>@Html.ActionLink("HISTÓRIA", "Historia", "Home")</li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="container body-content">
         @RenderBody()
+        <footer>
+            Imagens ilustrativas
+        </footer>
         @*<hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
