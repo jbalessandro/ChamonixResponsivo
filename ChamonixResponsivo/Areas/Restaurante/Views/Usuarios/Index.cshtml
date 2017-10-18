@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Chamonix.Domain.Models.Admin.Usuario>
+
+@{
+    ViewBag.Title = "Usuários";
+}
+
+<h2>Usuários</h2>
+
+<p>
+    @Html.ActionLink("Novo usuário", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Logon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlteradoEm)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Logon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cargo.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlteradoEm)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.UsuarioId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.UsuarioId }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.UsuarioId })
+        </td>
+    </tr>
+}
+
+</table>

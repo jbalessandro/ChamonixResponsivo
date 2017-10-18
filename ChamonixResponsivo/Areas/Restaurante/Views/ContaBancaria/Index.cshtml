@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Chamonix.Domain.Models.Admin.ContaBancaria>
+
+@{
+    ViewBag.Title = "Contas Bancárias";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nova conta", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CodigoBanco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Agencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Conta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Saldo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodigoBanco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Conta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Saldo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefone)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ContaBancariaId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ContaBancariaId }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.ContaBancariaId })
+        </td>
+    </tr>
+}
+
+</table>

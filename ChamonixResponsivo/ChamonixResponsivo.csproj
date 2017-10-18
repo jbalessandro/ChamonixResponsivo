@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -77,6 +78,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -195,12 +200,26 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Restaurante\Common\Hepers\BindCargos.cs" />
+    <Compile Include="Areas\Restaurante\Common\Hepers\BindEstado.cs" />
+    <Compile Include="Areas\Restaurante\Common\Hepers\BindProdutoCategoria.cs" />
+    <Compile Include="Areas\Restaurante\Common\Hepers\BindRamo.cs" />
+    <Compile Include="Areas\Restaurante\Controllers\CargosController.cs" />
+    <Compile Include="Areas\Restaurante\Controllers\ContaBancariaController.cs" />
+    <Compile Include="Areas\Restaurante\Controllers\EstadosController.cs" />
+    <Compile Include="Areas\Restaurante\Controllers\FornecedoresController.cs" />
+    <Compile Include="Areas\Restaurante\Controllers\InicioController.cs" />
+    <Compile Include="Areas\Restaurante\Controllers\ProdutoCategoriaController.cs" />
+    <Compile Include="Areas\Restaurante\Controllers\RamoController.cs" />
+    <Compile Include="Areas\Restaurante\Controllers\UsuariosController.cs" />
+    <Compile Include="Areas\Restaurante\RestauranteAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ContatoViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -239,6 +258,41 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Restaurante\Views\web.config" />
+    <Content Include="Areas\Restaurante\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Inicio\Index.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Cargos\Index.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Cargos\Details.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Cargos\Create.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Cargos\Edit.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Cargos\Delete.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Estados\Index.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Estados\Create.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Estados\Edit.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Estados\Delete.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Usuarios\Index.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Usuarios\Details.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Usuarios\Create.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Usuarios\Edit.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Usuarios\Delete.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Ramo\Index.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Ramo\Details.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Ramo\Create.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Ramo\Edit.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Ramo\Delete.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Fornecedores\Index.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Fornecedores\Details.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Fornecedores\Create.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Fornecedores\Edit.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Fornecedores\Delete.cshtml" />
+    <Content Include="Areas\Restaurante\Views\ProdutoCategoria\Index.cshtml" />
+    <Content Include="Areas\Restaurante\Views\ProdutoCategoria\Details.cshtml" />
+    <Content Include="Areas\Restaurante\Views\ProdutoCategoria\Create.cshtml" />
+    <Content Include="Areas\Restaurante\Views\ProdutoCategoria\Edit.cshtml" />
+    <Content Include="Areas\Restaurante\Views\ProdutoCategoria\Delete.cshtml" />
+    <Content Include="Areas\Restaurante\Views\ContaBancaria\Index.cshtml" />
+    <Content Include="Areas\Restaurante\Views\ContaBancaria\Details.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -289,6 +343,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Restaurante\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -297,6 +352,15 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chamonix.Domain\Chamonix.Domain.csproj">
+      <Project>{9720b8ed-03eb-4aa5-a7a6-c57943cccad4}</Project>
+      <Name>Chamonix.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

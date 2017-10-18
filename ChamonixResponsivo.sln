@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChamonixResponsivo", "Chamo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChamonixResponsivo.Tests", "ChamonixResponsivo.Tests\ChamonixResponsivo.Tests.csproj", "{F1E95698-D952-4221-9C17-C92F71CA2168}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chamonix.Domain", "Chamonix.Domain\Chamonix.Domain.csproj", "{9720B8ED-03EB-4AA5-A7A6-C57943CCCAD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chamonix.Test", "Chamonix.Test\Chamonix.Test.csproj", "{1F7C4193-1995-47CA-801E-30E7C47C01E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{F1E95698-D952-4221-9C17-C92F71CA2168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1E95698-D952-4221-9C17-C92F71CA2168}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1E95698-D952-4221-9C17-C92F71CA2168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9720B8ED-03EB-4AA5-A7A6-C57943CCCAD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9720B8ED-03EB-4AA5-A7A6-C57943CCCAD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9720B8ED-03EB-4AA5-A7A6-C57943CCCAD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9720B8ED-03EB-4AA5-A7A6-C57943CCCAD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F7C4193-1995-47CA-801E-30E7C47C01E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F7C4193-1995-47CA-801E-30E7C47C01E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F7C4193-1995-47CA-801E-30E7C47C01E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F7C4193-1995-47CA-801E-30E7C47C01E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
