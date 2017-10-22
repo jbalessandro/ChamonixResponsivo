@@ -34,5 +34,8 @@ namespace Chamonix.Domain.Models.Admin
 
         [Display(Name = "Cargo")]
         public virtual Cargo Cargo { get; set; }
+
+        [Display(Name = "Regras", Prompt = "Ex: empresa_crud, permissao...")]
+        public string Roles { get; set; }
     }
 }

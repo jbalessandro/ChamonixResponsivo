@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IBaseService.cs" />
+    <Compile Include="Abstract\ILogin.cs" />
     <Compile Include="Abstract\IUsuarioService.cs" />
     <Compile Include="Common\NotEqualAttribute.cs" />
     <Compile Include="Migrations\Configuration.cs" />

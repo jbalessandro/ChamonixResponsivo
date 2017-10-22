@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Chamonix.Domain.Service.Admin
 {
-    public class UsuarioService : IUsuarioService
+    public class UsuarioService : IUsuarioService, ILogin
     {
         private IBaseRepository<Usuario> repository;
 
@@ -38,6 +38,18 @@ namespace Chamonix.Domain.Service.Admin
         public Usuario Find(int id)
         {
             return repository.Find(id);
+        }
+
+        public int GetIdUsuario(string login)
+        {
+            var usuario = repository.Listar().Where(x => x.Ativo == true && x.Logon == login).FirstOrDefault();
+
+            if (usuario != null)
+            {
+                return usuario.UsuarioId;
+            }
+
+            return 0;
         }
 
         public int Gravar(Usuario item)
@@ -75,6 +87,16 @@ namespace Chamonix.Domain.Service.Admin
 
             usuario.Senha = novaSenha;
             return repository.Alterar(usuario);
+        }
+
+        public Usuario ValidaLogin(string login, string senha)
+        {
+            if (!string.IsNullOrEmpty(login) && !string.IsNullOrEmpty(senha))
+            {
+                return repository.Listar().Where(x => x.Ativo == true && x.Logon == login && x.Senha == senha).FirstOrDefault();
+            }
+
+            return null;
         }
     }
 }

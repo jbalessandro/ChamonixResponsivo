@@ -10,70 +10,70 @@ using System.Web.Mvc;
 namespace ChamonixResponsivo.Areas.Restaurante.Controllers
 {
     [AreaAuthorizeAttribute("Restaurante", Roles = "admin")]
-    public class RamoController : Controller
+    public class ContaCategoriaController : Controller
     {
-        IBaseService<Ramo> service;
+        IBaseService<ContaCategoria> service;
 
-        public RamoController()
-        {
-            this.service = new RamoService();
+        public ContaCategoriaController() {
+            service = new ContaCategoriaService();
         }
 
-        // GET: Restaurante/Ramo
+        // GET: Restaurante/ContaCategoria
         public ActionResult Index()
         {
-            var ramos = service.Listar().OrderBy(x => x.Descricao).ToList();
-            return View(ramos);
+            var categorias = service.Listar().OrderBy(x => x.Descricao).ToList();
+            return View(categorias);
         }
 
-        // GET: Restaurante/Ramo/Details/5
+        // GET: Restaurante/ContaCategoria/Details/5
         public ActionResult Details(int id)
         {
-            var ramo = service.Find(id);
+            var item = service.Find(id);
 
-            if (ramo == null)
+            if (item == null)
             {
                 return HttpNotFound();
             }
 
-            return View(ramo);
+            return View(item);
         }
 
-        // GET: Restaurante/Ramo/Create
+        // GET: Restaurante/ContaCategoria/Create
         public ActionResult Create()
         {
-            var ramo = new Ramo
-            {
-                AlteradoEm = DateTime.Now,
-                Ativo = true,
-                UsuarioId = 4
-            };
-
-            return View(ramo);
+            var item = new ContaCategoria();
+            return View(item);
         }
 
-        // POST: Restaurante/Ramo/Create
+        // POST: Restaurante/ContaCategoria/Create
         [HttpPost]
-        public ActionResult Create(Ramo ramo)
+        public ActionResult Create(ContaCategoria item)
         {
             try
             {
-                if (ModelState.IsValid)
+                try
                 {
-                    service.Gravar(ramo);
-                    return RedirectToAction("Index");
-                }
+                    if (ModelState.IsValid)
+                    {
+                        service.Gravar(item);
+                        return RedirectToAction("Index");
+                    }
 
-                return View(ramo);
+                    return View(item);
+                }
+                catch (ArgumentException e)
+                {
+                    ModelState.AddModelError(string.Empty, e.Message);
+                    return View(item);
+                }
             }
-            catch (ArgumentException e)
+            catch
             {
-                ModelState.AddModelError(string.Empty, e.Message);
-                return View(ramo);
+                return View();
             }
         }
 
-        // GET: Restaurante/Ramo/Edit/5
+        // GET: Restaurante/ContaCategoria/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -81,38 +81,38 @@ namespace ChamonixResponsivo.Areas.Restaurante.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var ramo = service.Find((int)id);
+            var item = service.Find((int)id);
 
-            if (ramo == null)
+            if (item == null)
             {
                 return HttpNotFound();
             }
 
-            return View(ramo);
+            return View(item);
         }
 
-        // POST: Restaurante/Ramo/Edit/5
+        // POST: Restaurante/ContaCategoria/Edit/5
         [HttpPost]
-        public ActionResult Edit(Ramo ramo)
+        public ActionResult Edit(ContaCategoria item)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    service.Gravar(ramo);
+                    service.Gravar(item);
                     return RedirectToAction("Index");
                 }
 
-                return View(ramo);
+                return View(item);
             }
             catch (ArgumentException e)
             {
                 ModelState.AddModelError(string.Empty, e.Message);
-                return View(ramo);
+                return View(item);
             }
         }
 
-        // GET: Restaurante/Ramo/Delete/5
+        // GET: Restaurante/ContaCategoria/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -120,17 +120,17 @@ namespace ChamonixResponsivo.Areas.Restaurante.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            var ramo = service.Find((int)id);
+            var item = service.Find((int)id);
 
-            if (ramo == null)
+            if (item == null)
             {
                 return HttpNotFound();
             }
 
-            return View(ramo);
+            return View(item);
         }
 
-        // POST: Restaurante/Ramo/Delete/5
+        // POST: Restaurante/ContaCategoria/Delete/5
         [HttpPost]
         public ActionResult Delete(int id)
         {
@@ -142,12 +142,12 @@ namespace ChamonixResponsivo.Areas.Restaurante.Controllers
             catch (ArgumentException e)
             {
                 ModelState.AddModelError(string.Empty, e.Message);
-                var ramo = service.Find(id);
-                if (ramo == null)
+                var item = service.Find(id);
+                if (item == null)
                 {
                     return HttpNotFound();
                 }
-                return View(ramo);
+                return View(item);
             }
         }
     }

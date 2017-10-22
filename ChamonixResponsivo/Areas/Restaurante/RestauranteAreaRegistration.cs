@@ -2,18 +2,24 @@
 
 namespace ChamonixResponsivo.Areas.Restaurante
 {
-    public class RestauranteAreaRegistration : AreaRegistration 
+    public class RestauranteAreaRegistration : AreaRegistration
     {
-        public override string AreaName 
+        public override string AreaName
         {
-            get 
+            get
             {
                 return "Restaurante";
             }
         }
 
-        public override void RegisterArea(AreaRegistrationContext context) 
+        public override void RegisterArea(AreaRegistrationContext context)
         {
+            context.MapRoute(
+                "Restaurante",
+                "Restaurante",
+                new { action = "Index", Controller = "Inicio" }
+        );
+
             context.MapRoute(
                 "Restaurante_default",
                 "Restaurante/{controller}/{action}/{id}",

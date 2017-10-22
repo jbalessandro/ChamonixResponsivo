@@ -1,0 +1,95 @@
+﻿@model Chamonix.Domain.Models.Admin.ContaBancaria
+
+@{
+    ViewBag.Title = "Conta Bancária";
+}
+
+<h2>Conta Bancária</h2>
+
+<h3>Confirma a exclusão desta conta bancária?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodigoBanco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodigoBanco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeBanco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeBanco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Agencia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Agencia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Conta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Conta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Saldo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Saldo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Excluir" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

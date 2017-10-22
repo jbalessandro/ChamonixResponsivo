@@ -1,15 +1,15 @@
 ﻿using Chamonix.Domain.Abstract;
 using Chamonix.Domain.Models.Admin;
 using Chamonix.Domain.Service.Admin;
+using ChamonixResponsivo.Common;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 
 namespace ChamonixResponsivo.Areas.Restaurante.Controllers
 {
+    [AreaAuthorizeAttribute("Restaurante", Roles = "admin")]
     public class UsuariosController : Controller
     {
         IBaseService<Usuario> service;

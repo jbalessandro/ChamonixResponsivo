@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Chamonix.Domain.Models.Admin.ContaCategoria>
+
+@{
+    ViewBag.Title = "Conta Categoria";
+}
+
+<h2>Conta Categoria</h2>
+
+<p>
+    @Html.ActionLink("Nova", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.ContaCategoriaId }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ContaCategoriaId }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.ContaCategoriaId })
+        </td>
+    </tr>
+}
+
+</table>

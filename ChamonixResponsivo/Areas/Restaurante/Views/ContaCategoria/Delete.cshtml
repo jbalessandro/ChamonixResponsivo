@@ -1,29 +1,21 @@
-﻿@model Chamonix.Domain.Models.Admin.Usuario
+﻿@model Chamonix.Domain.Models.Admin.ContaCategoria
 
 @{
-    ViewBag.Title = "Usuários";
+    ViewBag.Title = "Conta Categoria";
 }
 
-<h2>Usuários</h2>
+<h2>Excluir</h2>
 
-<h3>Confirma a exclusão deste usuário?</h3>
+<h3>Confirma a exclusão desta categoria?</h3>
 <div>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Nome)
+            @Html.DisplayNameFor(model => model.Descricao)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Logon)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Logon)
+            @Html.DisplayFor(model => model.Descricao)
         </dd>
 
         <dt>
@@ -43,19 +35,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Cargo.Descricao)
+            @Html.DisplayNameFor(model => model.UsuarioId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Cargo.Descricao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Roles)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Roles)
+            @Html.DisplayFor(model => model.Usuario.Nome)
         </dd>
 
     </dl>
