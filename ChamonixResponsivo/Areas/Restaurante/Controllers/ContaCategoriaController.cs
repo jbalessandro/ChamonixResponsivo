@@ -13,9 +13,11 @@ namespace ChamonixResponsivo.Areas.Restaurante.Controllers
     public class ContaCategoriaController : Controller
     {
         IBaseService<ContaCategoria> service;
+        ILogin login;
 
         public ContaCategoriaController() {
             service = new ContaCategoriaService();
+            login = new UsuarioService();
         }
 
         // GET: Restaurante/ContaCategoria
@@ -41,7 +43,7 @@ namespace ChamonixResponsivo.Areas.Restaurante.Controllers
         // GET: Restaurante/ContaCategoria/Create
         public ActionResult Create()
         {
-            var item = new ContaCategoria();
+            var item = new ContaCategoria { UsuarioId = login.GetIdUsuario(System.Web.HttpContext.Current.User.Identity.Name) };
             return View(item);
         }
 
@@ -82,6 +84,7 @@ namespace ChamonixResponsivo.Areas.Restaurante.Controllers
             }
 
             var item = service.Find((int)id);
+            item.UsuarioId = login.GetIdUsuario(System.Web.HttpContext.Current.User.Identity.Name);
 
             if (item == null)
             {

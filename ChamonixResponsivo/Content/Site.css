@@ -226,6 +226,9 @@ textarea {
 .box-content {
     padding: 20px;
 }
+.trip-index{
+    padding-left:40%;
+}
 
 #map {
     width: 100%;

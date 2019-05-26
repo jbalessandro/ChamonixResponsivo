@@ -204,19 +204,23 @@
     <Compile Include="Areas\Restaurante\Common\Hepers\BindContaBancaria.cs" />
     <Compile Include="Areas\Restaurante\Common\Hepers\BindContaCategoria.cs" />
     <Compile Include="Areas\Restaurante\Common\Hepers\BindEstado.cs" />
+    <Compile Include="Areas\Restaurante\Common\Hepers\BindFornecedor.cs" />
     <Compile Include="Areas\Restaurante\Common\Hepers\BindProdutoCategoria.cs" />
     <Compile Include="Areas\Restaurante\Common\Hepers\BindRamo.cs" />
     <Compile Include="Areas\Restaurante\Controllers\CargosController.cs" />
     <Compile Include="Areas\Restaurante\Controllers\ContaBancariaController.cs" />
     <Compile Include="Areas\Restaurante\Controllers\ContaCategoriaController.cs" />
+    <Compile Include="Areas\Restaurante\Controllers\ContaParcelaController.cs" />
     <Compile Include="Areas\Restaurante\Controllers\EstadosController.cs" />
     <Compile Include="Areas\Restaurante\Controllers\FornecedoresController.cs" />
     <Compile Include="Areas\Restaurante\Controllers\InicioController.cs" />
     <Compile Include="Areas\Restaurante\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Restaurante\Controllers\AgendamentoController.cs" />
     <Compile Include="Areas\Restaurante\Controllers\ProdutoCategoriaController.cs" />
     <Compile Include="Areas\Restaurante\Controllers\RamoController.cs" />
     <Compile Include="Areas\Restaurante\Controllers\UsuariosController.cs" />
     <Compile Include="Areas\Restaurante\Models\LoginUsuario.cs" />
+    <Compile Include="Areas\Restaurante\Models\ParcelaAddModel.cs" />
     <Compile Include="Areas\Restaurante\RestauranteAreaRegistration.cs" />
     <Compile Include="Common\AreaAuthorizeAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -243,6 +247,8 @@
     <Content Include="images\carta-vinho-01.jpg" />
     <Content Include="images\carta-vinho-02.jpg" />
     <Content Include="images\carta-vinho-03.jpg" />
+    <Content Include="images\carta-vinho-04.jpg" />
+    <Content Include="images\carta-vinho-05.jpg" />
     <Content Include="images\chamonix-house.jpg" />
     <Content Include="images\fondue.jpg" />
     <Content Include="images\hist-fondue.jpg" />
@@ -308,6 +314,9 @@
     <Content Include="Areas\Restaurante\Views\ContaBancaria\Edit.cshtml" />
     <Content Include="Areas\Restaurante\Views\ContaBancaria\Delete.cshtml" />
     <Content Include="Areas\Restaurante\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Agendamento\Create.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Agendamento\Edit.cshtml" />
+    <Content Include="Areas\Restaurante\Views\Agendamento\Delete.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -359,6 +368,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Restaurante\Views\ContaParcela\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

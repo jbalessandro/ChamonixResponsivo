@@ -50,17 +50,22 @@ namespace ChamonixResponsivo.Controllers
         {
             if (ModelState.IsValid)
             {
-                System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
+                System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage
+                {
+                    From = new System.Net.Mail.MailAddress("postmaster@chamonixfondue.com.br")
+                };
+                message.To.Add(new System.Net.Mail.MailAddress("reservas@chamonixfondue.com.br"));
 
-                message.From = new System.Net.Mail.MailAddress("contato@chamonixfondue.com");
-                message.To.Add(new System.Net.Mail.MailAddress("contato@chamonixfondue.com"));
-
+                message.Subject = "Chamonix - contato pelo site";
+                message.Body = model.Mensagem.Trim() + "<br /><br />Enviada por: " + model.Email?.ToLower().Trim();
                 message.IsBodyHtml = true;
                 message.BodyEncoding = Encoding.UTF8;
-                message.Subject = "Chamonix - contato pelo site";
-                message.Body = model.Mensagem;
 
-                System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
+                System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("mail.chamonixfondue.com.br");
+                var credentials = new System.Net.NetworkCredential("postmaster@chamonixfondue.com.br", "@b8c7p2c6");
+                client.Credentials = credentials;
+                client.Port = 8889;
+                client.EnableSsl = false;
                 client.Send(message);
 
                 ViewBag.Obrigado = "Obrigado pelo contato!";

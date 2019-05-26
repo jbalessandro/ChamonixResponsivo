@@ -20,9 +20,11 @@ namespace Chamonix.Domain.Models.Admin
         public int UsuarioId { get; set; }
 
         [Range(1,double.MaxValue, ErrorMessage ="Selecione o fornecedor")]
+        [Display(Name = "Fornecedor")]
         public int FornecedorId { get; set; }
 
         [Range(1,double.MaxValue, ErrorMessage ="Selecione a categoria")]
+        [Display(Name ="Categoria")]
         public int ContaCategoriaId { get; set; }
 
         public virtual Usuario Usuario { get; set; }
