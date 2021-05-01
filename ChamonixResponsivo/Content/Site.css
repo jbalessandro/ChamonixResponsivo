@@ -235,3 +235,7 @@ textarea {
     height: 400px;
     background-color: grey;
 }
+
+.white {
+    color: #ffffff !important;
+}

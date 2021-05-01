@@ -50,26 +50,33 @@ namespace ChamonixResponsivo.Controllers
         {
             if (ModelState.IsValid)
             {
-                System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage
+                try
                 {
-                    From = new System.Net.Mail.MailAddress("postmaster@chamonixfondue.com.br")
-                };
-                message.To.Add(new System.Net.Mail.MailAddress("reservas@chamonixfondue.com.br"));
+                    System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage
+                    {
+                        From = new System.Net.Mail.MailAddress("postmaster@chamonixfondue.com.br")
+                    };
+                    message.To.Add(new System.Net.Mail.MailAddress("reservas@chamonixfondue.com.br"));
 
-                message.Subject = "Chamonix - contato pelo site";
-                message.Body = model.Mensagem.Trim() + "<br /><br />Enviada por: " + model.Email?.ToLower().Trim();
-                message.IsBodyHtml = true;
-                message.BodyEncoding = Encoding.UTF8;
+                    message.Subject = "Chamonix - contato pelo site";
+                    message.Body = model.Mensagem.Trim() + "<br /><br />Enviada por: " + model.Nome + " - " + model.Email?.ToLower().Trim();
+                    message.IsBodyHtml = true;
+                    message.BodyEncoding = Encoding.UTF8;
 
-                System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("mail.chamonixfondue.com.br");
-                var credentials = new System.Net.NetworkCredential("postmaster@chamonixfondue.com.br", "@b8c7p2c6");
-                client.Credentials = credentials;
-                client.Port = 8889;
-                client.EnableSsl = false;
-                client.Send(message);
+                    System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("mail.chamonixfondue.com.br");
+                    var credentials = new System.Net.NetworkCredential("postmaster@chamonixfondue.com.br", "b&e8lU98");
 
-                ViewBag.Obrigado = "Obrigado pelo contato!";
-                return View(model);
+                    client.Credentials = credentials;
+                    client.Port = 587;
+                    client.Send(message);
+
+                    ViewBag.Obrigado = "Obrigado pelo contato!";
+                    return View(model);
+                }
+                catch (System.Exception ex)
+                {
+                    var x = ex.Message;
+                }
             }
 
             return View(model);

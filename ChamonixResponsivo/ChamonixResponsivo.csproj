@@ -317,6 +317,9 @@
     <Content Include="Areas\Restaurante\Views\Agendamento\Create.cshtml" />
     <Content Include="Areas\Restaurante\Views\Agendamento\Edit.cshtml" />
     <Content Include="Areas\Restaurante\Views\Agendamento\Delete.cshtml" />
+    <None Include="Properties\PublishProfiles\chamonixfondue.com.br - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\chamonixfondue.com.br - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\chamonixfondue.com.br - Web Deploy2.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
